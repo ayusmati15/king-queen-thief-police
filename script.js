@@ -30,7 +30,7 @@ function checkwinner() {
     result.textContent = " It's a Draw! Both chosen " + player1Choice;
     result.style.color = "green";
   } else if (winMap[player1Choice]?.beats === player2Choice) {
-    result.textContent = ' Player 1 wins! ${player1Choice} beats ${player2Choice}`;
+    result.textContent = `Player 1 wins! ${player1Choice} beats ${player2Choice}`;
     result.style.color = "red";
   } else if (winMap[player2Choice]?.beats === player1Choice) {
     result.textContent = `Player 2 wins! ${player2Choice} beats ${player1Choice}`;
