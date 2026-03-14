@@ -1,55 +1,123 @@
+
 body {
   font-family: 'Arial', sans-serif;
   background-color: pink;
   text-align: center;
   padding-top: 40px;
+  transition: background 0.3s;
 }
 
 .game {
   background: white;
-  padding: 25px;
+  padding: 30px 40px;
   display: inline-block;
   border-radius: 15px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  transition: transform 0.3s;
+}
+
+.game:hover {
+  transform: scale(1.02);
+}
+
+
+.scoreboard {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 25px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.scoreboard div {
+  padding: 8px 15px;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .player {
-  margin: 30px 0;
+  margin: 25px 0;
 }
 
 .buttons button {
-  margin: 12px;
-  padding: 10px 15px;
+  margin: 10px;
+  padding: 12px 18px;
   font-size: 16px;
   border: none;
   border-radius: 6px;
-  background-color:blue;
+  background-color: #007bff;
   color: white;
   cursor: pointer;
-  transition: 0.2s;
+  transition: all 0.3s ease;
 }
 
 .buttons button:hover {
-  background-color: red;
+  background-color: #ff4d4d;
+  transform: scale(1.1);
 }
 
+.buttons button:active {
+  transform: scale(0.95);
+}
+
+
 .play-btn {
-  margin-top: 25px;
-  font-size: 17px;
-  padding: 10px 20px;
-  background-color:burlywood;
+  margin-top: 20px;
+  font-size: 18px;
+  padding: 12px 22px;
+  background-color: burlywood;
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .play-btn:hover {
-  background-color:orange;
+  background-color: orange;
+  transform: scale(1.05);
 }
+
+.play-btn:active {
+  transform: scale(0.95);
+}
+
 
 #result {
   margin-top: 20px;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+
+.win {
+  color: green;
+  animation: highlight 0.6s ease-in-out;
+}
+
+.lose {
+  color: red;
+  animation: highlight 0.6s ease-in-out;
+}
+
+.draw {
+  color: goldenrod;
+  animation: highlight 0.6s ease-in-out;
+}
+
+
+#pickStats {
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+
+@keyframes highlight {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
 }

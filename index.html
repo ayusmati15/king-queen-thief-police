@@ -8,32 +8,43 @@
 <body>
 
   <div class="game">
-    <h1>King - Queen - Thief - Police </h1>
+    <h1>King - Queen - Thief - Police</h1>
+
+    <div class="scoreboard">
+      <div id="player1Score">Player 1: 0</div>
+      <div id="player2Score">Player 2: 0</div>
+      <div id="rounds">Round: 0/5</div>
+    </div>
 
     <div class="player">
       <h2>Player 1</h2>
-      <h3>choose one out of these:</h3>
+      <h3>Choose one:</h3>
       <div class="buttons">
-        <button onclick="setChoice('player1', 'king')"> King</button>
-        <button onclick="setChoice('player1', 'queen')"> Queen</button>
-        <button onclick="setChoice('player1', 'thief')">️ Thief</button>
+        <button onclick="setChoice('player1', 'king')">King</button>
+        <button onclick="setChoice('player1', 'queen')">Queen</button>
+        <button onclick="setChoice('player1', 'thief')">Thief</button>
         <button onclick="setChoice('player1', 'police')">Police</button>
       </div>
     </div>
 
     <div class="player">
       <h2>Player 2</h2>
-      <h3>choose one out of these:</h3>
+      <h3>Choose one (or play vs AI):</h3>
       <div class="buttons">
-        <button onclick="setChoice('player2', 'king')"> King</button>
-        <button onclick="setChoice('player2', 'queen')"> Queen</button>
-        <button onclick="setChoice('player2', 'thief')"> Thief</button>
-        <button onclick="setChoice('player2', 'police')"> Police</button>
+        <button onclick="setChoice('player2', 'king')">King</button>
+        <button onclick="setChoice('player2', 'queen')">Queen</button>
+        <button onclick="setChoice('player2', 'thief')">Thief</button>
+        <button onclick="setChoice('player2', 'police')">Police</button>
+        <button onclick="setChoice('player2', aiChoice('easy')); checkWinner();">AI Easy</button>
+        <button onclick="setChoice('player2', aiChoice('hard')); checkWinner();">AI Hard</button>
       </div>
     </div>
 
-    <button class="play-btn" onclick="checkwinner()">Reveal Winner</button>
+   
+    <button class="play-btn" onclick="checkWinner()">Reveal Winner</button>
+
     <div id="result"></div>
+    <div id="pickStats"></div>
   </div>
 
   <script src="script.js"></script>
